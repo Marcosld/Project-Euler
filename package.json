@@ -1,0 +1,22 @@
+{
+  "name": "project-euler",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marcosld/Project-Euler.git"
+  },
+  "author": "Marcos Luis Delgado <marcos.luis.contractor@bbva.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Marcosld/Project-Euler/issues"
+  },
+  "homepage": "https://github.com/Marcosld/Project-Euler#readme",
+  "dependencies": {
+    "jest": "^24.0.0"
+  }
+}
