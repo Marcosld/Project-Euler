@@ -24,6 +24,13 @@ const getAllFactors = (n, factor = 2, factors = []) =>
             getAllFactors(n, nextPrime(factor), factors) :
             factors
 
+const multiplyFactors2 = (n, prime = 2, exp = 1, primes = []) =>
+    prime ** exp <= n
+        ? multiplyFactors2(n, prime, exp + 1, primes.concat(prime))
+        : nextPrime(prime) <= n
+            ? multiplyFactors2(n, nextPrime(prime), 1, primes)
+            : primes.reduce((total, x) => total * x, 1)
+
 const nextPrime = n => isPrime(n + 1) ? n + 1 : nextPrime(n + 1)
 
 const isPrime = (n, i = 2) =>
@@ -34,5 +41,6 @@ module.exports = {
     normalizeFactors,
     mergeFactors,
     smallestMultipleFactors,
-    multiplyFactors
+    multiplyFactors,
+    multiplyFactors2
 }
