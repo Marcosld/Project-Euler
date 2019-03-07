@@ -8,12 +8,16 @@ const nextXYSameDigits = (x, y) =>
             [x - 1, x - 1] :
             [null, null]
 
-const getMultPalSameDigits = (x, y = x) =>
-    isMultPalindrome(x, y) ?
-        x * y :
-        nextXYSameDigits(x, y) !== [null, null] ?
-            getMultPalSameDigits(...nextXYSameDigits(x, y)) :
-            null
+const getMultPalSameDigits = (x, y = x, max = 0) => {
+    let palindromes = []
+    while (x !== null && y !== null) {
+        const [nextX, nextY] = nextXYSameDigits(x, y)
+        if(isMultPalindrome(x, y)) palindromes.push(x * y)
+        x = nextX
+        y = nextY
+    }
+    return Math.max(...palindromes)
+}
 
 module.exports = {
     isMultPalindrome,

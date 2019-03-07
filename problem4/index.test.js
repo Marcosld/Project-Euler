@@ -42,6 +42,6 @@ describe('getMultPalSameDigits', () => {
         expect(getMultPalSameDigits(9)).toEqual(9)
     })
     test('should return 580085 for 999', () => {
-        expect(getMultPalSameDigits(999)).toEqual(580085)
+        expect(getMultPalSameDigits(999)).toEqual(906609)
     })
 })
