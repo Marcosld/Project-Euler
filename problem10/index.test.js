@@ -2,7 +2,6 @@ const {
   isPrime,
   getPrimeSumN
 } = require('./index')
-const Lazy = require('lazy.js')
 
 describe('isPrime', () => {
   test('should return true for 2', () => {
