@@ -99,7 +99,7 @@ const numbers = `37107287533902102798797998220837590246510135740250
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690`
 
-const sum = (x, y = '0', carry = '0') => (parseInt(carry) + parseInt(x) + parseInt(y)).toString().split('').reverse()
+const sum = (x, y = '0', carry = '0') => (+carry + +x + +y).toString().split('').reverse()
 
 const sumInvertedNumbersStringArrays = (xArray, yArray, [ lastSum = [], carry ]) => xArray[0]
     ? sumInvertedNumbersStringArrays(xArray.slice(1), yArray.slice(1), sum(xArray[0], yArray[0], carry)).concat(lastSum)
@@ -118,7 +118,7 @@ const getSumFirst10Digits = () => sumNumbersArrays(numbers.split('\n')).substr(0
 
 const getSumFirst10DigitsInt = () => numbers
   .split('\n')
-  .reduce((totalSum, nextNumber) => totalSum + parseInt(nextNumber), 0)
+  .reduce((totalSum, nextNumber) => totalSum + +nextNumber, 0)
   .toString()
   .replace('.', '')
   .substr(0, 10)

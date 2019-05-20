@@ -22,8 +22,8 @@ const numbersLiteral =
 
 const numbers = numbersLiteral.replace(/\n /g, '').split(' ').reduce((numbersArray, numberLiteral) =>
     numbersArray[numbersArray.length - 1].length < 20
-      ? [...numbersArray.slice(0, -1), numbersArray[numbersArray.length - 1].concat(parseInt(numberLiteral))]
-      : [...numbersArray, [parseInt(numberLiteral)]]
+      ? [...numbersArray.slice(0, -1), numbersArray[numbersArray.length - 1].concat(+numberLiteral)]
+      : [...numbersArray, [+numberLiteral]]
   ,[[]])
 
 const getProduct = (n, i, j, iOp, jOp) => n > 0
